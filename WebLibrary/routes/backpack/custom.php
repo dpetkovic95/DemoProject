@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\Auth\RegisterController;
 use Illuminate\Support\Facades\Route;
 
 // --------------------------
@@ -9,11 +10,14 @@ use Illuminate\Support\Facades\Route;
 // Routes you generate using Backpack\Generators will be placed here.
 
 Route::group([
-    'prefix'     => config('backpack.base.route_prefix', 'admin'),
+    'prefix' => config('backpack.base.route_prefix', 'admin'),
     'middleware' => array_merge(
-        (array) config('backpack.base.web_middleware', 'web'),
-        (array) config('backpack.base.middleware_key', 'admin')
+        (array)config('backpack.base.web_middleware', 'web'),
+        (array)config('backpack.base.middleware_key', 'admin')
     ),
-    'namespace'  => 'App\Http\Controllers\Admin',
+    'namespace' => 'App\Http\Controllers\Admin',
 ], function () { // custom admin routes
+    Route::crud('user', 'UserCrudController');
+    Route::crud('book', 'BookCrudController');
+    Route::crud('author', 'AuthorCrudController');
 }); // this should be the absolute last line of this file

@@ -258,8 +258,8 @@ return [
 
     // Fully qualified namespace of the User model
     'user_model_fqn' => config('auth.providers.users.model'),
-    // 'user_model_fqn' => App\User::class, // works on Laravel <= 7
-    // 'user_model_fqn' => App\Models\User::class, // works on Laravel >= 8
+//     'user_model_fqn' => App\User::class, // works on Laravel <= 7
+//     'user_model_fqn' => App\Models\User::class, // works on Laravel >= 8
 
     // The classes for the middleware to check if the visitor is an admin
     // Can be a single class or an array of classes
@@ -356,4 +356,41 @@ return [
     */
 
     'token_username' => env('BACKPACK_TOKEN_USERNAME', false),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Backpack registration fields
+    |--------------------------------------------------------------------------
+    */
+
+//    'crud' => [
+//        'register_fields' => [
+//            [
+//                'name' => 'name',
+//                'label' => 'Name',
+//                'type' => 'text',
+//                'tab' => 'Personal Information',
+//            ],
+//            [
+//                'name' => 'surname',
+//                'label' => 'Surname',
+//                'type' => 'text',
+//                'tab' => 'Personal Information',
+//            ],
+//            [
+//                'name' => 'email',
+//                'label' => 'Email',
+//                'type' => 'email',
+//                'tab' => 'Personal Information',
+//            ],
+//            [
+//                'name' => 'password',
+//                'label' => 'Password',
+//                'type' => 'password',
+//                'tab' => 'Personal Information',
+//            ],
+//            // Add your new field here
+//        ],
+//    ],
+
 ];
